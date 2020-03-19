@@ -1,5 +1,34 @@
 "use strict";
 
+console.log("veikia")
+
+document.querySelector(".search").addEventListener('click', function(){
+    document.querySelector(".demo").innerHTML = 
+    `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
+        <div class = "navRow">
+            <div class = "rowElement">People</div>
+            <div class = "rowElement">Jobs</div>
+            <div class = "rowElement">Content</div>
+            <div class = "rowElement">Companies</div>
+            <div class = "rowElement">Schools</div>
+            <div class = "rowElement">Groups</div>
+        </div>       
+        <div class = "trySearch">
+            <p>Try searching for</p>
+            <div class="job">
+                <div class="searchIcon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="searchElement" style = "font-weight: bold;">coder</div>
+            </div>
+        </div>
+    </div>`;
+  });
+
+document.querySelector(".search").removeEventListener('click', function(){
+    document.querySelector(".demo").innerHTML = "Hello World";
+  });
+
 function renderFeed(data) {
     if (!Array.isArray(data)){
         return console.error("Reikia Array");
@@ -31,7 +60,8 @@ function renderPostHeader(author, time){
                     <img src="./img/${author.img}">
                     <div class="texts">
                         <div class="title">
-                            <a href="${author.link}">${author.name} ${author.surname} ${author.connection} ${author.position}</a>
+                            <a href="${author.link}">${author.name} ${author.surname} ${author.connection}</a>
+                            <a href="${author.link}"> ${author.position}</a>
                         </div>
                         <div class="time">${time}</div>
                     </div>
@@ -58,9 +88,7 @@ function renderPostContent(content){
 
 function renderPostContentText(text){
     let HTML = "";
-
     HTML = `<p>${text}</p>`;
-
     return HTML;
 }
 
@@ -131,7 +159,5 @@ function renderPostFooter(){
     </div>
 </div>`;
 }
-
-
 
 renderFeed(feed);
