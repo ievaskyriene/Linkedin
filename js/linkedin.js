@@ -136,24 +136,28 @@ function renderPostContentGallery(images){
 function renderPostFooter(){
     return `<div class="footer">
     <div class="row">
+        <div class="reaction">like</div>
+    </div>
+    <div class="row">
         <div class="action">
             <i class="fa fa-thumbs-up"></i>
             <div class="text">Like</div>
         </div>
         <div class="action">
-            <i class="fa fa-comment-o"></i>
+            <i class="fas fa-comment-alt"></i>
             <div class="text">Comment</div>
         </div>
+        <div class="action">
+            <i class="fas fa-share"></i>
+            <div class="text">Share</div>
+         </div>
     </div>
     <div class="row">
         <img src="./img/user.png">
         <div class="comment-form">
             <textarea></textarea>
             <div class="interactions">
-                <i class="fa fa-smile-o"></i>
                 <i class="fa fa-camera"></i>
-                <i class="fa fa-file-image-o"></i>
-                <i class="fa fa-user-secret"></i>
             </div>
         </div>
     </div>
