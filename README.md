@@ -1,1 +1,1 @@
- https://ievaskyriene.github.io/Linkedin/.
+ https://ievaskyriene.github.io/Linkedin/
