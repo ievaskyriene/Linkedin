@@ -90,3 +90,56 @@ const feed = [
 },
 
 ]
+const views = [
+        {
+            row: "Who viewed your profile",
+            number: 30
+        },
+
+        {
+            row: "Views on your post",
+            number: 2000
+        },
+        {
+            row: "Connections",
+            number: 500
+        }
+]
+
+console.log(views.row)
+
+const groups = [
+    {
+        icon: '<i class="fas fa-campground"></i>',
+        text: "Business Insider Intelligence"
+    },
+
+    {
+        icon: '<i class="fas fa-campground"></i>',
+        text: "Business Insider Tech"
+    },
+
+    {
+        icon: '<i class="fas fa-campground"></i>',
+        text: "Harvard Business Review"
+    }
+]
+
+const hashtags = [
+    {
+        icon: '<i class="fas fa-hashtag"></i>',
+        text: "programming"
+    },
+
+    { 
+        icon: '<i class="fas fa-hashtag"></i>',
+        text: "softwaredesign"
+    },
+
+    { 
+        icon: '<i class="fas fa-hashtag"></i>',
+        text: "softwareengineering"
+    }
+]
+
+
