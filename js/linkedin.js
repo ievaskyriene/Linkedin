@@ -165,3 +165,83 @@ function renderPostFooter(){
 }
 
 renderFeed(feed);
+
+
+
+function renderViews(datalfp){
+    if (!Array.isArray(datalfp)){
+        return console.error("Reikia Array");
+    }
+    let HTML = "";
+    for (let i = 0; i < datalfp.length; i++){
+        HTML += `<div class = "rowv">
+            <div class = "text">${datalfp[i].row}</div>
+            <div class = "number">${datalfp[i].number}</div>
+        </div>`
+    }
+
+    return document.querySelector('.views').innerHTML = HTML;
+
+}
+
+renderViews(views)
+
+
+function renderGroups(datalpfs){
+  
+
+    if (!Array.isArray(datalpfs)){
+        return console.error("Reikia Array");
+    }
+    let HTML = "";
+    for (let i = 0; i < datalpfs.length; i++){
+        console.log(datalpfs)
+        HTML += `<div class = "row">
+            <div class = "icon">${datalpfs[i].icon}</div>
+            <div class = "text">${datalpfs[i].text}</div>
+        </div>`
+    }
+    let groups = document.querySelector('.groups');
+    let groupsContentLeft = groups.querySelector('.contentLeft')
+    return groupsContentLeft.innerHTML = HTML;
+}
+renderGroups(groups)
+
+
+function renderHashtags(datalH){
+    if (!Array.isArray(datalH)){
+        return console.error("Reikia Array");
+    }
+
+    let HTML = "";
+    for (let i = 0; i < datalH.length; i++){
+        HTML += `<div class = "row">
+            <div class = "icon">${datalH[i].icon}</div>
+            <div class = "text">${datalH[i].text}</div>
+        </div>`
+    }
+    let followedHashtags = document.querySelector('.followedHashtags');
+    let followedHashtagsCl = followedHashtags.querySelector('.contentLeft')
+    return followedHashtagsCl.innerHTML = HTML;
+}
+
+renderHashtags(hashtags)
+
+let leftHeader = document.querySelector('.headerlf').innerHTML;
+console.log(leftHeader)
+let color = "";
+if (hashtags.length !== 0){
+    color = "red";   
+}
+    else {
+    color = "blue";
+}
+
+leftHeader += `<div class="hdr ${color}">Followed Hashtags</div>`;
+
+console.log(leftHeader)
+
+
+
+
+
