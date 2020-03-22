@@ -147,7 +147,7 @@ header {
         .leftPart > .image{
             width: 100%;
             height: 50px;
-            background-image: url(/img/background.svg);
+            background-image: url("../img/background.svg");
             position: relative;
             }
 
@@ -236,7 +236,7 @@ header {
                         margin-right: 10px;
                         height: 10px;
                         width: 10px;
-                        background-image: url(/img/square-gold.jpg);
+                        background-image: url("../img/square-gold.jpg");
                         background-size: cover;
                         background-repeat: no-repeat; 
                     }
