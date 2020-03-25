@@ -3,10 +3,13 @@
 console.log("veikia")
 
 const search = document.querySelector(".search");
+let searchOverlayAdded = false;
+search.addEventListener("click", openMenu);
 
-search.addEventListener("click", openMenu)
 
 function openMenu(){
+   
+
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
         <div class = "navRow">
@@ -17,29 +20,33 @@ function openMenu(){
             <div class = "rowElement">Schools</div>
             <div class = "rowElement">Groups</div>
         </div>  ` 
+    
 
-  let container = document.querySelector(".container")
-  container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
-  
-        return
+    if (searchOverlayAdded) {
+        searchOverlayAdded = false;
+    } else {
+        container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
+    }
+
+    searchOverlayAdded = !searchOverlayAdded;
 }
 
-const closes = document.querySelector('.container');
+let container = document.querySelector(".container")
 
+const closes = document.querySelector('.container');
 closes.addEventListener('click', removeMenu)
 function removeMenu(){
+    const overlay = document.querySelector('.overlay')
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav">
-        </div>  ` 
-
-    const overlay = document.querySelector('.overlay')
-    console.log(overlay)
-    overlay.remove();
+        </div> 
+         ` 
+        overlay.remove();
         return
-
 };
 
 
+  
 
 /*document.querySelector(".search").addEventListener('click', function(){
     document.querySelector(".demo").innerHTML = 
@@ -91,9 +98,6 @@ function removeMenu(){
     }
       
       removeMenu*/
-      
-
-
 
 function renderFeed(data) {
     if (!Array.isArray(data)){
