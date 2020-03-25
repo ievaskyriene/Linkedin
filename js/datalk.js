@@ -142,4 +142,59 @@ const hashtags = [
     }
 ]
 
+const addmenu = [
+    {
+        column: "People"
+    },
+    {
+        column: "Jobs"
+    },
+    {
+        column: "Content"
+    },
+    {
+        column: "Companies"
+    },
+    {
+        column: "Schools"
+    },
+    {
+        column: "Groups"
+    }
+]
+
+
+const headerMenu = [
+
+    {
+        icon: '<i class="fas fa-home"></i>',
+        text: 'Home'
+    },
+    {
+        icon: '<i class="fas fa-home"></i>',
+        text: 'Home'
+    },
+    {
+        icon: '<i class="fas fa-home"></i>',
+        text: 'Home'
+    },
+    {
+        icon: '<i class="fas fa-home"></i>',
+        text: 'Home'
+    },
+    {
+        icon: '<i class="fas fa-home"></i>',
+        text: 'Home'
+    },
+    {
+        icon: '<i class="fas fa-home"></i>',
+        text: 'Home'
+    },
+
+
+]
+
+
+
+
 

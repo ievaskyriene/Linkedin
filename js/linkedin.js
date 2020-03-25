@@ -2,7 +2,46 @@
 
 console.log("veikia")
 
-document.querySelector(".search").addEventListener('click', function(){
+const search = document.querySelector(".search");
+
+search.addEventListener("click", openMenu)
+
+function openMenu(){
+    document.querySelector(".demo").innerHTML = 
+    `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
+        <div class = "navRow">
+            <div class = "rowElement">People</div>
+            <div class = "rowElement">Jobs</div>
+            <div class = "rowElement">Content</div>
+            <div class = "rowElement">Companies</div>
+            <div class = "rowElement">Schools</div>
+            <div class = "rowElement">Groups</div>
+        </div>  ` 
+
+  let container = document.querySelector(".container")
+  container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
+  
+        return
+}
+
+const closes = document.querySelector('.container');
+
+closes.addEventListener('click', removeMenu)
+function removeMenu(){
+    document.querySelector(".demo").innerHTML = 
+    `<div class="searchNav">
+        </div>  ` 
+
+    const overlay = document.querySelector('.overlay')
+    console.log(overlay)
+    overlay.remove();
+        return
+
+};
+
+
+
+/*document.querySelector(".search").addEventListener('click', function(){
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
         <div class = "navRow">
@@ -25,9 +64,36 @@ document.querySelector(".search").addEventListener('click', function(){
     </div>`;
   });
 
-document.querySelector(".search").removeEventListener('click', function(){
-    document.querySelector(".demo").innerHTML = "Hello World";
-  });
+  
+function removeMenu(){
+    document.querySelector(".search").removeEventListener('click', function(){
+        document.querySelector(".demo").innerHTML = 
+        `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
+            <div class = "navRow">
+                <div class = "rowElement">People</div>
+                <div class = "rowElement">Jobs</div>
+                <div class = "rowElement">Content</div>
+                <div class = "rowElement">Companies</div>
+                <div class = "rowElement">Schools</div>
+                <div class = "rowElement">Groups</div>
+            </div>       
+            <div class = "trySearch">
+                <p>Try searching for</p>
+                <div class="job">
+                    <div class="searchIcon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="searchElement" style = "font-weight: bold;">coder</div>
+                </div>
+            </div>
+        </div>`;
+      });
+    }
+      
+      removeMenu*/
+      
+
+
 
 function renderFeed(data) {
     if (!Array.isArray(data)){
@@ -240,8 +306,6 @@ if (hashtags.length !== 0){
 leftHeader += `<div class="hdr ${color}">Followed Hashtags</div>`;
 
 console.log(leftHeader)
-
-
 
 
 
