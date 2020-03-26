@@ -27,7 +27,6 @@ function openMenu(){
     } else {
         container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
     }
-
     searchOverlayAdded = !searchOverlayAdded;
 }
 
@@ -44,9 +43,6 @@ function removeMenu(){
         overlay.remove();
         return
 };
-
-
-  
 
 /*document.querySelector(".search").addEventListener('click', function(){
     document.querySelector(".demo").innerHTML = 
@@ -152,7 +148,6 @@ function renderPostContent(content){
     }
 
     HTML+="</div>";
-
     return HTML;
 }
 
@@ -297,7 +292,7 @@ function renderHashtags(datalH){
 
 renderHashtags(hashtags)
 
-let leftHeader = document.querySelector('.headerlf').innerHTML;
+/*let leftHeader = document.querySelector('.headerlf').innerHTML;
 console.log(leftHeader)
 let color = "";
 if (hashtags.length !== 0){
@@ -309,7 +304,27 @@ if (hashtags.length !== 0){
 
 leftHeader += `<div class="hdr ${color}">Followed Hashtags</div>`;
 
-console.log(leftHeader)
+console.log(leftHeader)*/
+
+
+
+function renderHeaderMenu(dataHMenu){
+    if (!Array.isArray(dataHMenu)){
+        return console.error("Reikia Array");
+    }
+    let HTML = "";
+    for (let i = 0; i < dataHMenu.length; i++){
+        HTML += `<div class = "navIcon">
+            <div class = "i">${dataHMenu[i].i}</div>
+            <div class = "p">${dataHMenu[i].p}</div>
+        </div>`
+    }
+    let headerMenu = document.querySelector('.searchNavHeader');
+
+    return  headerMenu.innerHTML = HTML;
+}
+
+renderHeaderMenu(headerMenu)
 
 
 

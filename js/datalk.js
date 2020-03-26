@@ -163,35 +163,36 @@ const addmenu = [
     }
 ]
 
-
 const headerMenu = [
-
     {
-        icon: '<i class="fas fa-home"></i>',
-        text: 'Home'
-    },
-    {
-        icon: '<i class="fas fa-home"></i>',
-        text: 'Home'
-    },
-    {
-        icon: '<i class="fas fa-home"></i>',
-        text: 'Home'
-    },
-    {
-        icon: '<i class="fas fa-home"></i>',
-        text: 'Home'
-    },
-    {
-        icon: '<i class="fas fa-home"></i>',
-        text: 'Home'
-    },
-    {
-        icon: '<i class="fas fa-home"></i>',
-        text: 'Home'
+        i: '<i class="fas fa-home"></i>',
+        p: 'Home'
     },
 
-
+    {
+        i: ' <i class="fas fa-user-friends"></i>',
+        p: 'My network'
+    },
+    {
+        i: '<i class="fas fa-suitcase"></i>',
+        p: 'Jobs'
+    },
+    {
+        i: `<i class="fas fa-envelope-square"></i>`,
+        p: 'Messages'
+    },
+    {
+        i: '<i class="far fa-bell"></i>',
+        p: 'Notifications'
+    },
+    {
+        i: '<img src="./img/chuck.jpg" alt="User photo">',
+        p: 'Me'
+    },
+    {
+        i: ' <i class="fas fa-th-large"></i>',
+        p: 'Work'
+    }
 ]
 
 
