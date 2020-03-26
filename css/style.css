@@ -632,10 +632,69 @@ header {
                                         font-size: 17px;
                                     }
 
-
-    .rightPart {
+    .containerRightPart {
         display: inline-block;
         margin-top: 50px;
         float: left;
-
     }
+
+        .rightPartFirstRow {
+
+        }
+
+            .rightPartFirstRow > header{
+
+            }
+
+                .rightPartFirstRow > header > h2{
+
+                }
+
+                .rightPartFirstRow > header > i{
+
+                }
+
+            .rightPartFirstRow > .firstRowContent{
+
+            }
+
+            .rightPartFirstRow > .text{
+
+            }
+
+        .rigthPartSecondRow{
+
+        }
+
+        .thirdPartRow{
+
+        }
+
+            .thirdRowContent{
+
+            }
+
+            .thirdRowFooter{
+                
+            }
+
+                .thirdRowFooter :first-child{
+
+                }
+
+                .thirdRowFooter > img{
+
+                }
+
+                .thirdRowFooter :nth-child(3){
+
+                }
+
+                .thirdRowFooter > i{
+
+                }
+
+                .thirdRowFooter :nth-child(5){
+
+                }
+
