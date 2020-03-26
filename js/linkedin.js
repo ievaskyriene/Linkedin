@@ -306,8 +306,6 @@ leftHeader += `<div class="hdr ${color}">Followed Hashtags</div>`;
 
 console.log(leftHeader)*/
 
-
-
 function renderHeaderMenu(dataHMenu){
     if (!Array.isArray(dataHMenu)){
         return console.error("Reikia Array");
@@ -326,5 +324,34 @@ function renderHeaderMenu(dataHMenu){
 
 renderHeaderMenu(headerMenu)
 
+
+function renderAddToFeed(addToFeed){
+
+    if (!Array.isArray(addToFeed)){
+        return console.error("Reikia Array");
+    }
+    let HTML = "";
+    for (let i = 0; i < addToFeed.length; i++){
+        
+        HTML += `<div class = "header">
+        <img src="./img/${addToFeed[i].img}">
+        <div class="texts">
+            <div class="title">
+                <div class ="name">${addToFeed[i].name}</div>
+                <div class ="activity">${addToFeed[i].activity}</div>
+            </div>
+        </div>
+        <div class = "follow">
+            <div class = "plus">${addToFeed[i].follow.plus}</div>
+            <div class = "plus">${addToFeed[i].follow.text}</div>
+        </div>
+    </div>`;
+    }
+    let addtoFeedCont = document.querySelector('.secondRowContent');
+    return  addtoFeedCont.innerHTML = HTML;
+    
+}
+
+console.log(renderAddToFeed(addToYourFeed))
 
 

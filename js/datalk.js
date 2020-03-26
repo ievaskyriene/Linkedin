@@ -195,6 +195,43 @@ const headerMenu = [
     }
 ]
 
+const addToYourFeed = [
+
+    {
+        name: 'Richard Branson',
+        activity: 'Founder at Virgin Group',
+        img: 'branson.jpg',
+        follow: {
+            plus: "+",
+            text: "follow"
+        },
+    },
+
+    {
+        name: 'Ted Conferences',
+        activity: 'Media Production',
+        img: 'ted-logo.png',
+        follow: {
+            plus: "+",
+            text: "follow"
+        },
+    },
+
+    {
+        name: 'Verslo Žinios',
+        activity: 'Media Production',
+        img: 'vz logo_big.png',
+        follow: {
+            plus: "+",
+            text: "follow"
+        },
+    }
+
+
+]
+
+console.log(addToYourFeed)
+
 
 
 
