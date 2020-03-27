@@ -333,25 +333,45 @@ function renderAddToFeed(addToFeed){
     let HTML = "";
     for (let i = 0; i < addToFeed.length; i++){
         
-        HTML += `<div class = "header">
+        HTML += `<div class = "headerFirstRowContent">
         <img src="./img/${addToFeed[i].img}">
-        <div class="texts">
-            <div class="title">
-                <div class ="name">${addToFeed[i].name}</div>
-                <div class ="activity">${addToFeed[i].activity}</div>
-            </div>
+        <div class="title">
+            <div class ="name">${addToFeed[i].name}</div>
+            <div class ="activity">${addToFeed[i].activity}</div>
         </div>
         <div class = "follow">
             <div class = "plus">${addToFeed[i].follow.plus}</div>
-            <div class = "plus">${addToFeed[i].follow.text}</div>
+            <div class = "text">${addToFeed[i].follow.text}</div>
         </div>
     </div>`;
     }
-    let addtoFeedCont = document.querySelector('.secondRowContent');
+    let addtoFeedCont = document.querySelector('.firstRowContent');
     return  addtoFeedCont.innerHTML = HTML;
-    
 }
 
-console.log(renderAddToFeed(addToYourFeed))
+renderAddToFeed(addToYourFeed)
+
+
+
+function renderFinalRow(dataFR){
+    if (!Array.isArray(dataFR)){
+        return console.error("Reikia Array");
+    }
+
+    let HTML = "";
+    for (let i = 0; i < dataFR.length; i++){
+        HTML += `<div class = "firstRow">${dataFR[0].itemFirst}${dataFR[0].itemSecond}</div>
+        <div class = "firstRow">${dataFR[1].itemFirst}${dataFR[0].itemSecond}</div>
+        <div class = "firstRow">${dataFR[2].itemFirst}${dataFR[0].itemSecond}</div>`
+
+        console.log(dataFR[0])
+        let finalRow = document.querySelector(".thirdRowContent");
+        return finalRow.innerHTML = HTML;
+    }
+
+}
+
+
+renderFinalRow(finalPart)
 
 
