@@ -785,7 +785,7 @@ header {
 
         .thirdPartRow{
             display: inline-block;
-
+            width: 100%;
         }
 
             .thirdRowContent{
@@ -793,26 +793,46 @@ header {
             }
 
             .thirdRowFooter{
+                width: 100%;
+                font-size: 13px;
+                display: inline-block;
                 
+                margin-top: 30px;
+                margin-right: 30px;
+
             }
 
                 .thirdRowFooter :first-child{
-
+                    display: inline-block;
+                    font-weight: bold;
+                    float: left;
+                    margin-left: 30px;
                 }
 
                 .thirdRowFooter > img{
+                    display: inline-block;
+                    height: 15px;
+                    width: 25px;
+                    float: left;
 
                 }
 
                 .thirdRowFooter :nth-child(3){
+                    display: inline-block;
 
                 }
 
                 .thirdRowFooter > i{
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
 
                 }
 
                 .thirdRowFooter :nth-child(5){
+                    display: inline-block;
 
                 }
+
+        
 
