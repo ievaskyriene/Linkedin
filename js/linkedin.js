@@ -360,14 +360,20 @@ function renderFinalRow(dataFR){
 
     let HTML = "";
     for (let i = 0; i < dataFR.length; i++){
-        HTML += `<div class = "firstRow">${dataFR[0].itemFirst}${dataFR[0].itemSecond}</div>
-        <div class = "firstRow">${dataFR[1].itemFirst}${dataFR[0].itemSecond}</div>
-        <div class = "firstRow">${dataFR[2].itemFirst}${dataFR[0].itemSecond}</div>`
+        if (dataFR[i].item){
+        HTML += `<div class = "row">${dataFR[i].item} </div>`
+        }
+        if(dataFR[i].itemF){
+            HTML += `<div class = "row">${dataFR[i].itemF.text} ${dataFR[i].itemF.icon}</div>`
+    
+        }
 
-        console.log(dataFR[0])
+    }
+
+        
         let finalRow = document.querySelector(".thirdRowContent");
         return finalRow.innerHTML = HTML;
-    }
+    
 
 }
 

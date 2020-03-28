@@ -232,27 +232,38 @@ console.log(addToYourFeed)
 
 const finalPart = [
     {
-        itemFirst: "About",
-        itemSecond: "Help Center",
-       item: {
-            text:"Privacy & Terms",
-            icon:"<i class='fas fa-check'></i>",
-        }
+        item: "About",
     },
+
     {
-        item: "Advertising",
-        item: "LALAL",
-        item: {
+        item: "Help Center",
+    },
+
+    {
+        itemF: {
             text:"Privacy & Terms",
             icon:"<i class='fas fa-check'></i>",
         }
     },
 
     {
-        item: "Get the Linkedin map",
-        item: "More",
-        
+        item: "Advertising",
     },
+
+    {
+        itemF: {
+            text:"Business Services",
+            icon:"<i class='fas fa-check'></i>",
+        }
+    },
+    {
+        item: "Get the Linkedin app",
+    },
+
+    {
+        item: "More",
+    },
+   
 
 ]
 

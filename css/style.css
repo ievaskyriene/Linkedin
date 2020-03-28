@@ -671,7 +671,7 @@ header {
                     border-radius: 50%;
                     height: 17px;
                     width: 17px;
-
+                    cursor: pointer;
                 }
 
             .rightPartFirstRow > .firstRowContent{
@@ -684,6 +684,7 @@ header {
                     float: left;
                     margin: 10px;
                     vertical-align: middle;
+                    cursor: pointer;
                 }
 
                 .headerFirstRowContent > img{
@@ -732,9 +733,13 @@ header {
                         padding-right: 5px;
                         margin-right: 5px;
                         vertical-align: middle;
-                       
                         margin-top: 5px;
+                    }
 
+                    .headerFirstRowContent > .follow:hover{
+                        background-color: #c0e2f5;
+                        border: 2px solid #0073b1;
+                
                     }
 
                         .headerFirstRowContent > .follow > .plus{
@@ -760,6 +765,7 @@ header {
                         color:  #0073b1;
                         font-weight: 400px;
                         font-size: 18px;
+                        cursor: pointer;
                     }
 
 
@@ -789,8 +795,56 @@ header {
         }
 
             .thirdRowContent{
+                text-align: center;
+                width: 100%;
+                display: inline-block;
+                float: left;
+                color: rgba(0,0,0,.6);
+                font-size: 14px;
+                margin-top: 30px;
+                line-height: 25px;
 
             }
+                .thirdRowContent > .row{
+                display: inline-block;
+                float: left;
+                margin-left: 12px;
+                margin-right: 12px;
+                cursor: pointer;
+                }
+
+                .thirdRowContent > .row:hover{
+                    color:  #0073b1;
+                }
+
+                .thirdRowContent > .row:nth-child(2):hover
+                {
+                    color:  #d16dd1;
+                }
+
+                .thirdRowContent > .row:nth-child(4):hover
+                {
+                    color:  #a16dd1;
+                }
+
+
+                .thirdRowContent > .row:nth-child(4){
+                    margin-left: 40px;
+                    }
+
+                .thirdRowContent > .row:nth-child(6){
+                    margin-left: 60px;
+                    }
+
+
+
+                    .thirdRowContent > .row > i{
+                       
+                        vertical-align: text-top;
+                        height: 10px;
+                        width: 10px;
+                        }
+
 
             .thirdRowFooter{
                 width: 100%;
