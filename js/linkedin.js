@@ -306,8 +306,6 @@ leftHeader += `<div class="hdr ${color}">Followed Hashtags</div>`;
 
 console.log(leftHeader)*/
 
-
-
 function renderHeaderMenu(dataHMenu){
     if (!Array.isArray(dataHMenu)){
         return console.error("Reikia Array");
@@ -326,5 +324,60 @@ function renderHeaderMenu(dataHMenu){
 
 renderHeaderMenu(headerMenu)
 
+
+function renderAddToFeed(addToFeed){
+
+    if (!Array.isArray(addToFeed)){
+        return console.error("Reikia Array");
+    }
+    let HTML = "";
+    for (let i = 0; i < addToFeed.length; i++){
+        
+        HTML += `<div class = "headerFirstRowContent">
+        <img src="./img/${addToFeed[i].img}">
+        <div class="title">
+            <div class ="name">${addToFeed[i].name}</div>
+            <div class ="activity">${addToFeed[i].activity}</div>
+        </div>
+        <div class = "follow">
+            <div class = "plus">${addToFeed[i].follow.plus}</div>
+            <div class = "text">${addToFeed[i].follow.text}</div>
+        </div>
+    </div>`;
+    }
+    let addtoFeedCont = document.querySelector('.firstRowContent');
+    return  addtoFeedCont.innerHTML = HTML;
+}
+
+renderAddToFeed(addToYourFeed)
+
+
+
+function renderFinalRow(dataFR){
+    if (!Array.isArray(dataFR)){
+        return console.error("Reikia Array");
+    }
+
+    let HTML = "";
+    for (let i = 0; i < dataFR.length; i++){
+        if (dataFR[i].item){
+        HTML += `<div class = "row">${dataFR[i].item} </div>`
+        }
+        if(dataFR[i].itemF){
+            HTML += `<div class = "row">${dataFR[i].itemF.text} ${dataFR[i].itemF.icon}</div>`
+    
+        }
+
+    }
+
+        
+        let finalRow = document.querySelector(".thirdRowContent");
+        return finalRow.innerHTML = HTML;
+    
+
+}
+
+
+renderFinalRow(finalPart)
 
 

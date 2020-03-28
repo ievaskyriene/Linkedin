@@ -195,6 +195,79 @@ const headerMenu = [
     }
 ]
 
+const addToYourFeed = [
+
+    {
+        name: 'Richard Branson',
+        activity: 'Founder at Virgin Group',
+        img: 'branson.jpg',
+        follow: {
+            plus: "+",
+            text: "follow"
+        },
+    },
+
+    {
+        name: 'Ted Conferences',
+        activity: 'Media Production',
+        img: 'ted-logo.png',
+        follow: {
+            plus: "+",
+            text: "follow"
+        },
+    },
+
+    {
+        name: 'Verslo Žinios',
+        activity: 'Media Production',
+        img: 'vz logo_big.jpg',
+        follow: {
+            plus: "+",
+            text: "follow"
+        },
+    }
+]
+
+console.log(addToYourFeed)
+
+const finalPart = [
+    {
+        item: "About",
+    },
+
+    {
+        item: "Help Center",
+    },
+
+    {
+        itemF: {
+            text:"Privacy & Terms",
+            icon:"<i class='fas fa-check'></i>",
+        }
+    },
+
+    {
+        item: "Advertising",
+    },
+
+    {
+        itemF: {
+            text:"Business Services",
+            icon:"<i class='fas fa-check'></i>",
+        }
+    },
+    {
+        item: "Get the Linkedin app",
+    },
+
+    {
+        item: "More",
+    },
+   
+
+]
+
+
 
 
 
