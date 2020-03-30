@@ -2,13 +2,12 @@
 
 console.log("veikia")
 
-const search = document.querySelector(".search");
+const search = document.querySelector("input");
 let searchOverlayAdded = false;
 search.addEventListener("click", openMenu);
 
 
 function openMenu(){
-   
 
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
@@ -36,6 +35,11 @@ const closes = document.querySelector('.container');
 closes.addEventListener('click', removeMenu)
 function removeMenu(){
     const overlay = document.querySelector('.overlay')
+
+
+    console.log(overlay)
+
+    
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav">
         </div> 
@@ -44,56 +48,7 @@ function removeMenu(){
         return
 };
 
-/*document.querySelector(".search").addEventListener('click', function(){
-    document.querySelector(".demo").innerHTML = 
-    `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
-        <div class = "navRow">
-            <div class = "rowElement">People</div>
-            <div class = "rowElement">Jobs</div>
-            <div class = "rowElement">Content</div>
-            <div class = "rowElement">Companies</div>
-            <div class = "rowElement">Schools</div>
-            <div class = "rowElement">Groups</div>
-        </div>       
-        <div class = "trySearch">
-            <p>Try searching for</p>
-            <div class="job">
-                <div class="searchIcon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="searchElement" style = "font-weight: bold;">coder</div>
-            </div>
-        </div>
-    </div>`;
-  });
 
-  
-function removeMenu(){
-    document.querySelector(".search").removeEventListener('click', function(){
-        document.querySelector(".demo").innerHTML = 
-        `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
-            <div class = "navRow">
-                <div class = "rowElement">People</div>
-                <div class = "rowElement">Jobs</div>
-                <div class = "rowElement">Content</div>
-                <div class = "rowElement">Companies</div>
-                <div class = "rowElement">Schools</div>
-                <div class = "rowElement">Groups</div>
-            </div>       
-            <div class = "trySearch">
-                <p>Try searching for</p>
-                <div class="job">
-                    <div class="searchIcon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="searchElement" style = "font-weight: bold;">coder</div>
-                </div>
-            </div>
-        </div>`;
-      });
-    }
-      
-      removeMenu*/
 
 function renderFeed(data) {
     if (!Array.isArray(data)){
@@ -138,9 +93,10 @@ function renderPostHeader(author, time){
 }
 
 function renderPostContent(content){
+   
     let HTML = `<div class="content">`;
     if (content.text) {
-        HTML += renderPostContentText(content.text);
+        HTML += renderPostContentText(content);
     }
 
     if(content.images){
@@ -151,14 +107,42 @@ function renderPostContent(content){
     return HTML;
 }
 
-function renderPostContentText(text){
-    let HTML = "";
-    HTML = `<p>${text}</p>`;
+function renderPostContentText( content ){
+   
+    const maxTextLength = 240;
+    const smallestTextLength = 30;
+    let HTML = '';
+    let style = '';
+    let text = content.text;
+
+    console.log(text)
+
+    if (text.length <= smallestTextLength) {
+        style += 'big-text';
+    }
+
+    
+    if ( text.length >= maxTextLength ) {
+        text = text.substring( 0, maxTextLength );
+        let skipSymbols = 0;
+        for ( let i=maxTextLength-1; i>=0; i-- ) {
+            if ( text[i] === ' ' ) {
+                break;
+            }
+            skipSymbols++;
+        }
+        text = text.substring( 0, maxTextLength-skipSymbols-1 );
+        text += '... <span class="more">Read more</span>';
+    }
+
+    HTML = `<p class="${style}" data-fulltext="${content.text}">${text}</p>`;
+
     return HTML;
+
 }
 
 function renderPostContentGallery(images){
-    console.log(images);
+  
     let HTML = "";
     let imgHTML = "";
     let moreHTML = "";
@@ -230,8 +214,6 @@ function renderPostFooter(){
 }
 
 renderFeed(feed);
-
-
 
 function renderViews(datalfp){
     if (!Array.isArray(datalfp)){
