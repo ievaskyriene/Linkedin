@@ -6,7 +6,6 @@ const search = document.querySelector("input");
 let searchOverlayAdded = false;
 search.addEventListener("click", openMenu);
 
-
 function openMenu(){
 
     document.querySelector(".demo").innerHTML = 
@@ -22,24 +21,22 @@ function openMenu(){
     
 
     if (searchOverlayAdded) {
-        searchOverlayAdded = false;
+        searchOverlayAdded = true;
     } else {
         container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
     }
-    searchOverlayAdded = !searchOverlayAdded;
+    searchOverlayAdded = searchOverlayAdded;
 }
 
 let container = document.querySelector(".container")
 
-const closes = document.querySelector('.container');
-closes.addEventListener('click', removeMenu)
+container.addEventListener('click', removeMenu)
+
 function removeMenu(){
     const overlay = document.querySelector('.overlay')
 
-
     console.log(overlay)
 
-    
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav">
         </div> 
