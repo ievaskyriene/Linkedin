@@ -35,7 +35,7 @@ container.addEventListener('click', removeMenu)
 function removeMenu(){
     const overlay = document.querySelector('.overlay')
 
-    console.log(overlay)
+   
 
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav">
@@ -64,9 +64,11 @@ function renderPost(data){
     console.log('-----------------');
     let HTML = `<div class = "post">
                 ${renderPostHeader(data.author, data.time)}
+                
                 ${renderPostContent(data.content)}
-                ${renderPostFooter()}
+                ${renderPostFooter(data.footer)}
                 </div>`;
+console.log(data.footer)
 
     return HTML;
 }
@@ -106,7 +108,7 @@ function renderPostContent(content){
 
 function renderPostContentText( content ){
    
-    const maxTextLength = 240;
+    const maxTextLength = 225;
     const smallestTextLength = 30;
     let HTML = '';
     let style = '';
@@ -122,14 +124,14 @@ function renderPostContentText( content ){
     if ( text.length >= maxTextLength ) {
         text = text.substring( 0, maxTextLength );
         let skipSymbols = 0;
-        for ( let i=maxTextLength-1; i>=0; i-- ) {
+        /*for ( let i=maxTextLength-1; i>=0; i-- ) {
             if ( text[i] === ' ' ) {
                 break;
             }
             skipSymbols++;
-        }
+        }*/
         text = text.substring( 0, maxTextLength-skipSymbols-1 );
-        text += '... <span class="more">Read more</span>';
+        text += ' <span class="more">...read more</span>';
     }
 
     HTML = `<p class="${style}" data-fulltext="${content.text}">${text}</p>`;
@@ -179,12 +181,13 @@ function renderPostContentGallery(images){
     return HTML;
 }
 
-function renderPostFooter(){
-    return `<div class="footer">
-    <div class="row">
-        <div class="reaction">like</div>
+function renderPostFooter(footer){
+   let HTML = `<div class="footer">
+    <div class="reaction">
+        ${renderFooterReaction(footer)}
     </div>
-    <div class="row">
+
+    <div class="rowAction">
         <div class="action">
             <i class="fa fa-thumbs-up"></i>
             <div class="text">Like</div>
@@ -196,9 +199,10 @@ function renderPostFooter(){
         <div class="action">
             <i class="fas fa-share"></i>
             <div class="text">Share</div>
-         </div>
+        </div>
     </div>
-    <div class="row">
+    
+    <div class="rowComment">
         <img src="./img/user.png">
         <div class="comment-form">
             <textarea></textarea>
@@ -208,6 +212,21 @@ function renderPostFooter(){
         </div>
     </div>
 </div>`;
+
+return HTML
+
+}
+
+function renderFooterReaction(footer){
+   
+    let HTML = ''
+    for(let i = 0; i < footer.length; i++){
+        HTML += footer[i].reaction;
+    }
+
+    console.log(footer)
+    return HTML
+
 }
 
 renderFeed(feed);
@@ -344,19 +363,28 @@ function renderFinalRow(dataFR){
         }
         if(dataFR[i].itemF){
             HTML += `<div class = "row">${dataFR[i].itemF.text} ${dataFR[i].itemF.icon}</div>`
-    
         }
-
     }
-
-        
+ 
         let finalRow = document.querySelector(".thirdRowContent");
         return finalRow.innerHTML = HTML;
-    
 
 }
 
 
 renderFinalRow(finalPart)
 
+const readMores = document.querySelectorAll('.post p >.more');
+
+for (let i=0; i<readMores.length; i++) {
+    const readMore = readMores[i];
+    readMore.addEventListener('click', readMoreClick);
+}
+
+function readMoreClick(event){
+    const p = event.target.closest('p');
+    const fullText = p.dataset.fulltext;
+    return p.innerText = fullText;
+
+}
 
