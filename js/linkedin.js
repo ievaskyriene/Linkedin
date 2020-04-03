@@ -2,12 +2,15 @@
 
 console.log("veikia")
 
-const search = document.querySelector("input");
-let searchOverlayAdded = false;
+const search = document.querySelector(".search");
+
 search.addEventListener("click", openMenu);
+let container = document.querySelector(".container")
+
+let whatever=false;
+
 
 function openMenu(){
-
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
         <div class = "navRow">
@@ -18,30 +21,39 @@ function openMenu(){
             <div class = "rowElement">Schools</div>
             <div class = "rowElement">Groups</div>
         </div>  ` 
-    
 
-    if (searchOverlayAdded) {
-        searchOverlayAdded = true;
-    } else {
+      
+document.querySelector(".search").innerHTML = `<input type = "text" placeholder = "search" style = "background-color: white; padding-left:10px;">
+<i class="fas fa-search" style = "color: #0073b1; width: 40px; font-size: 16px; padding-top: 10px;"></i></input>`
+
+
+let overlay = document.querySelector('.overlay')
+
+    if (whatever===false) {
         container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
+        whatever=true
     }
-    searchOverlayAdded = searchOverlayAdded;
+
+    overlay = !overlay;
 }
 
-let container = document.querySelector(".container")
+
 
 container.addEventListener('click', removeMenu)
 
 function removeMenu(){
     const overlay = document.querySelector('.overlay')
-
    
-
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav">
         </div> 
          ` 
+    document.querySelector(".search").innerHTML = `<i class="fas fa-search"></i>
+    <input type = "text" placeholder = "search"></input>`
+
+
         overlay.remove();
+        whatever=false
         return
 };
 

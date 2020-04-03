@@ -138,20 +138,35 @@ header {
             width: 60px;
         }
 
-        header > .navBar > .search {
+        header > .navBar >.search {
+            display: flex;
             height: 100%;
-            width: 300px;
+            width: 300px;  
+            background-color: #e0e3ee;
+        
            
-            
         }
 
-        .navBar > .search > input {
-                height: 100%;
-                width: 100%;
-                font-size: 16px;
-                background-color: #f5f5f5;
-                outline: none ;
+            .navBar > .search > i {
+               height: 100%;
+               width: 30px;
+                padding-top: 12px;
+                font-size: 14px;
+                color: #3f474b;
+                border: 0px none;
+                background: transparent;
+
             }
+
+            .navBar > .search > input {
+                    height: 100%;
+                    width: 272px;
+                    font-size: 16px;
+                 outline: none;
+                    color: #3f474b;
+                    border: 0px none;
+                    background: transparent;
+                }
 
 /*leftPart*/
         .containerLeft{
@@ -572,33 +587,37 @@ header {
                 .post > .footer{
                     display: inline-block;
                     width: 100%;
+                    padding-left: 10px;
 
                 }
             
-                    .footer > .row{
+                    .footer > .reaction,
+                    .footer > .rowAction,
+                    .footer > .rowComment
+                    {
                         display: flex;
                         width: 100%;
                     }
 
-                    .footer > .row:first-child{
+                    .footer > .reaction{
                         border-bottom: 1px whitesmoke solid;
                     } 
                     
-                        .footer > .row > .action{
+                        .footer .action{
                             display: flex;
                             padding: 10px;
 
                         } 
-                            .row > .action > i{
+                            .action > i{
                                 height: 20px;
                                 width: 20px;
                             } 
 
-                            .row > .action > .texts{
+                            .action > .texts{
 
                             } 
 
-                            .footer > .row > img{
+                            .footer > .rowComment > img{
                                 display: inline-block;
                                 width: 36px;
                                 height: 36px;
@@ -610,7 +629,7 @@ header {
 
                             } 
 
-                            .footer > .row > .comment-form{
+                            .footer .comment-form{
                                 display: inline-block;
                                 width: calc(100% - 66px);
                                 float: right;
