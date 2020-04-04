@@ -1,0 +1,157 @@
+.overlay {
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #0004;
+}
+
+header {
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #283e4a;
+    color: #fff;
+    z-index: 3;
+}
+    .navBar{
+        width: 1200px;
+        height: 34px;
+        display: flex;
+        align-content: space-between;
+        margin-top: calc((50px - 34px) / 2);
+        margin-left: calc((100% - 1200px) / 2);
+        position: relative;
+    }
+
+        .searchNav{
+             display: inline-block;
+             font-size: 14px;
+        }
+
+        .searchNavHeader{
+            display: inline-block;
+            font-size: 14px;
+            padding-left: 100px;
+       }
+
+            .navIcon {
+                display: inline-block;
+                text-align: center;
+                padding-left: 30px;
+            }
+                .navIcon p{
+                    font-size: 14px;
+                }
+
+                .navBar i {
+                    color: white;
+                    font-size: 20px;
+                    text-align: center;
+                    height: 25px;
+                }
+
+
+            .user {
+                display: inline-block;
+                text-align: center;
+                padding-right: 30px;
+                border-right: 1px solid whitesmoke;
+                padding-left: 30px;
+            }
+
+            .navIcon:nth-child(6) .i img{
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                border: 2px whitesmoke solid;
+                }
+
+        .navBar input{
+            text-transform: capitalize;
+        }
+
+        .navRow {
+            display: flex; 
+            width: 100%;
+            height: 30%;
+            color: #3f474b;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            margin-right: 200px;
+            border-bottom: 1px solid #c6cdcf;
+        }
+
+        .trySearch {
+            display: inline-block;
+            color: black;
+            padding-left: 10px;
+            padding-top: 20px;
+        }
+
+        .job {
+            display: flex;
+            padding-top: 20px;
+        }
+
+        .searchIcon {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            color: #3f474b;
+        }
+            i{
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                color: #3f474b;
+            }
+
+            .rowElement{
+                border: 1px #3f474b solid;
+                padding: 2px 20px;
+                border-radius: 50px;
+                margin: 5px;
+                font-size: 18px;   
+            }
+
+        header img {
+            height: 34px;
+            width: 60px;
+        }
+
+        header > .navBar >.search {
+            display: flex;
+            height: 100%;
+            width: 300px;  
+            background-color: #e0e3ee;
+        }
+
+            .navBar > .search > i {
+               height: 100%;
+               width: 30px;
+                padding-top: 12px;
+                font-size: 14px;
+                color: #3f474b;
+                border: 0px none;
+                background: transparent;
+            }
+
+            .navBar > .search > input {
+                    height: 100%;
+                    width: 272px;
+                    font-size: 16px;
+                 outline: none;
+                    color: #3f474b;
+                    border: 0px none;
+                    background: transparent;
+                }

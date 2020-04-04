@@ -1,0 +1,221 @@
+.containerLeft{
+    display: inline-block;
+    width: 215px;
+    margin-top: 100px;
+    margin-left: calc(((100% - 1200px) / 2) + 12px);
+    margin-right: 20px;
+    height: 724px;
+}
+
+    .leftPart {
+        display: inline-block;
+        height: 410px;
+        border: 1px #a3a8aa solid;
+        box-shadow: 0px 2px 10px -4px #888;
+        border-radius: 3px;
+        background-color: white;
+    }
+
+        .leftPart > .image{
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            background-image: url("../img/background.svg");
+            position: relative;
+            }
+
+            .leftPart > .image > img{
+                height: 65px;
+                width: 65px;
+                border-radius: 50%;
+                position: absolute;
+                left: calc((100% - 65px) / 2);
+                bottom: -70%;
+                border: 2px whitesmoke solid;
+                object-fit: cover;
+                object-position: top;   
+                }
+        
+        .leftPart > .userProfile{
+            display: inline-block;
+            width: 100%;
+            padding-top: 70px;
+            text-align: center;
+            border-bottom: 1px #a3a8aa solid;
+        }
+
+            .leftPart > .userProfile :first-child{
+                font-size: 18px;
+            }
+
+            .leftPart > .userProfile :nth-child(2){
+                font-size: 14px;
+                color: rgb(143, 133, 133);
+                padding-top: 5px;
+                padding-bottom: 20px;
+            }
+    
+        .leftPart > .profileSecondRow {
+            width: 100%;
+            display: inline-block;
+            padding-top: 20px;
+        }
+
+                .leftPart > .profileSecondRow > .views >.rowv {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 10px;
+                    padding-left: 10px;
+                    margin-right: 10px;
+                    color: #696c6f;
+                    font-size: 14px;
+                }
+
+                .profileSecondRow > .views > .rowv:hover,
+                .profileSecondRow > .views > .rowv:hover > .number,
+                .profileSecondRow > .views > .rowv:hover > .text
+                
+                {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }       
+                
+                    .views > .rowv > .number{
+                        color: #0073b1; 
+                }
+
+            .leftPart > .profileSecondRow > p {
+                color: rgb(143, 133, 133);
+                padding-left: 10px;
+                font-size: 14px;
+                padding-top: 10px;
+            }
+
+            .leftPart > .profileSecondRow > .try {
+                display: flex;
+                padding-left: 10px;
+                width: 100%;
+                border-bottom: 1px #a3a8aa solid;
+            }
+
+            .try > span{
+                    display: inline-block;
+                    margin-top: 5px;
+                    margin-right: 10px;
+                    height: 10px;
+                    width: 10px;
+                    background-image: url("../img/square-gold.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat; 
+                }
+
+            .profileSecondRow > .try > p{
+                font-size: 14px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+
+            .leftPart > .profileSecondRow > :hover
+            {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            .leftPart > .profileSecondRow > :hover ~ .try
+
+            {
+                text-decoration: underline;
+                color:purple;
+                cursor: pointer;
+            }
+
+
+        .leftPart > .profileSecondRow > .savedItems {
+            width: 100%;
+            height: 50px;
+            display: inline-block;
+            padding: 15px;
+            margin-bottom: 20px;
+            vertical-align: middle;
+        }
+
+            .profileSecondRow > .savedItems > i{
+                display: inline-block;
+                float: left;
+                vertical-align: middle;
+                height: 10px;
+                width: 10px;
+                margin: 5px;    
+        }
+
+            .profileSecondRow > .savedItems > p{
+                vertical-align: middle;
+                padding-left: 10px;
+                display: inline-block;
+                float: left;
+            }
+
+    .leftPartSecond {
+        height: 254px;
+        display: inline-block;
+        width: 100%;
+        float: left;
+        margin-top: 10px;
+        border: 1px #a3a8aa solid;
+        box-shadow: 0px 2px 10px -4px #888;
+        border-radius: 3px;
+        background-color: white;
+    }
+
+        .leftPartSecond > .profileThirdRow{
+            display: inline-block;
+            float: left;
+            margin-left: 10px;
+        
+        }
+
+            .leftPartSecond > .profileThirdRow .row{
+                display: flex;
+                font-size: 14px;
+                color: #696c6f;
+                line-height: 18px;
+            }
+
+                .profileThirdRow .row > .icon {
+                    height: 25px;
+                    width: 25px;
+                }
+
+                .profileThirdRow .headerlf{
+                    color: #0073b1;
+                    padding-bottom: 5px;
+                    padding-top: 10px;
+                }
+
+                .profileThirdRow .headerlf:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+                .profileThirdRow > .events >.headerlf{
+                    color:black;
+                    padding-bottom: 5px;
+                    padding-top: 10px;
+                }
+
+                .profileThirdRow > .events >.headerlf:hover{
+                    text-decoration: none;
+                    cursor: none;
+                }
+
+            .discover{
+                display: inline-block;
+                height: 50px;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                padding: 15px;
+                border-left: 1px #a3a8aa solid;
+                border-right: 1px #a3a8aa solid;
+                border-bottom: 1px #a3a8aa solid;
+            }

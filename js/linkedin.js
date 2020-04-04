@@ -7,7 +7,7 @@ const search = document.querySelector(".search");
 search.addEventListener("click", openMenu);
 let container = document.querySelector(".container")
 
-let whatever=false;
+let searchOverlayAdded=false;
 
 
 function openMenu(){
@@ -29,9 +29,9 @@ document.querySelector(".search").innerHTML = `<input type = "text" placeholder 
 
 let overlay = document.querySelector('.overlay')
 
-    if (whatever===false) {
+    if (searchOverlayAdded===false) {
         container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
-        whatever=true
+        searchOverlayAdded=true
     }
 
     overlay = !overlay;
@@ -53,7 +53,7 @@ function removeMenu(){
 
 
         overlay.remove();
-        whatever=false
+        searchOverlayAdded=false
         return
 };
 
