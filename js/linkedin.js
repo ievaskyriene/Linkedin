@@ -249,10 +249,11 @@ function renderViews(datalfp){
     }
     let HTML = "";
     for (let i = 0; i < datalfp.length; i++){
-        HTML += `<div class = "rowv">
+        HTML += `
+        <a href="#" class = "rowv">
             <div class = "text">${datalfp[i].row}</div>
             <div class = "number">${datalfp[i].number}</div>
-        </div>`
+            </a>`
     }
 
     return document.querySelector('.views').innerHTML = HTML;
