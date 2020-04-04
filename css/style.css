@@ -35,12 +35,19 @@
                 padding-top: 20px;
                 display: flex;
                 width: 60%;
+                text-decoration: none;
             }
 
-                .firstColumn > i{
+                .firstColumn > p{
+                    color: #696c6f;
+                    text-decoration: none;
                 }
 
-                .firstColumn > p{
+                .firstColumn:hover i,
+                .firstColumn:hover p
+                {
+                    color: #0073b1;
+                    text-decoration: underline;
                 }
 
             .startPostIcons {
@@ -53,14 +60,18 @@
 
             }
 
-                .startPostIcons > .Icon{
-                height: 58px;
+                .startPostIcons .Icon{
+                height: 100%;
                 width: calc(100% / 3);
                 text-align: center;
                 }
 
+                .startPostIcons .Icon:hover{
+                  background-color: #f3f6f8;
+                }
+
                 .startPostIcons > .Icon:nth-child(2){
-                    height: 58px;
+                    height: 100%;
                     border-left: 1px #a3a8aa solid;
                     border-right: 1px #a3a8aa solid;
                     } 
@@ -75,11 +86,16 @@
             background-color: #f3f6f8;
         }
 
-            .article > p:first-child{
-                color: #0073b1;     
+            .article > a{
+                color: #0073b1;
+                text-decoration: none;   
             }
 
-            .article > p:nth-child(2){
+            .article > a:hover{
+                text-decoration: underline;   
+            }
+
+            .article > p{
                 padding-left: 5px;   
             }
 
