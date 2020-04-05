@@ -1,10 +1,11 @@
 .containerLeft{
     display: inline-block;
+    float: left;
     width: 215px;
     margin-top: 100px;
     margin-left: calc(((100% - 1200px) / 2) + 12px);
     margin-right: 20px;
-    height: 724px;
+    
 }
 
     .leftPart {
@@ -173,12 +174,16 @@
         box-shadow: 0px 2px 10px -4px #888;
         border-radius: 3px;
         background-color: white;
+        position: sticky;
+        top:60px;
     }
 
         .leftPartSecond > .profileThirdRow{
             display: inline-block;
             float: left;
             margin-left: 10px;
+            position: sticky;
+            top: 60px;
         }
 
             .leftPartSecond > .profileThirdRow >.groups,
@@ -231,6 +236,8 @@
                 border-left: 1px #a3a8aa solid;
                 border-right: 1px #a3a8aa solid;
                 border-bottom: 1px #a3a8aa solid;
+                position: sticky;
+                top: 314px;
             }
 
             .discover :hover{
