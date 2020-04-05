@@ -94,9 +94,7 @@
                 .post > .content {
                     display: inline-block;
                     float: left;
-                    width: 100%;
-                    
-
+                    width: 100%; 
                 }
 
                     .post > .content > p{
@@ -114,11 +112,45 @@
 
                         }
 
-                    .post > .content img{
-            
-                       width: 100%;
-
+                    .post > .content .gallery{
+                        display: inline-block;
+                        width: 100%;
+                        height: 280px;
+                        overflow: hidden;
                     }
+
+                    .post > .content img{
+                        display: inline-block;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        }
+
+                    .post > .content .gallery.gallery-2 {
+                        height: 360px;
+                    }
+
+                        .post > .content .gallery.gallery-2 > img{
+                         width: 50%;
+                         height: 100%;
+                        }
+
+                    .post > .content .gallery.gallery-3 {
+                        height: 360px;
+                    }
+
+                        .post > .content .gallery.gallery-3 > img{
+                            height: 50%;
+                        }
+
+                        .post > .content .gallery.gallery-3 > img:nth-child(2),
+                        .post > .content .gallery.gallery-3 > img:nth-child(3){
+                            width: 50%;
+                        }
+
+                       
+
+
 
 
                 .post > .footer{
