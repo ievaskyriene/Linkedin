@@ -74,8 +74,8 @@
                 }
 
                 .profileSecondRow > .views > .rowv:hover,
-                .profileSecondRow > .views > .rowv:hover > .number,
-                .profileSecondRow > .views > .rowv:hover > .text
+                .profileSecondRow > .views > .rowv:hover .number,
+                .profileSecondRow > .views > .rowv:hover .text
                 
                 {
                     text-decoration: underline; 

@@ -49,15 +49,29 @@ header {
                 text-align: center;
                 padding-left: 30px;
             }
-                .navIcon p{
+
+
+            .navIcon :hover,
+            .navIcon:hover .p,
+            .navIcon:hover i{
+                color: white;
+            }
+
+
+                .navIcon > .p{
                     font-size: 14px;
+                    color: rgb(207, 202, 202);  
+                }
+
+                .navIcon > .p:hover{
+                    color: white;
                 }
 
                 .navBar i {
-                    color: white;
                     font-size: 20px;
                     text-align: center;
                     height: 25px;
+                    color: rgb(207, 202, 202);
                 }
 
 
