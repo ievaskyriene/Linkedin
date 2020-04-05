@@ -3,13 +3,14 @@
 console.log("veikia")
 
 const search = document.querySelector(".search");
-let searchOverlayAdded = false;
+
 search.addEventListener("click", openMenu);
+let container = document.querySelector(".container")
+
+let searchOverlayAdded=false;
 
 
 function openMenu(){
-   
-
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
         <div class = "navRow">
@@ -20,80 +21,43 @@ function openMenu(){
             <div class = "rowElement">Schools</div>
             <div class = "rowElement">Groups</div>
         </div>  ` 
-    
 
-    if (searchOverlayAdded) {
-        searchOverlayAdded = false;
-    } else {
+      
+document.querySelector(".search").innerHTML = `<input type = "text" placeholder = "search" style = "background-color: white; padding-left:10px;">
+<i class="fas fa-search" style = "color: #0073b1; width: 40px; font-size: 16px; padding-top: 10px;"></i></input>`
+
+
+let overlay = document.querySelector('.overlay')
+
+    if (searchOverlayAdded===false) {
         container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
+        searchOverlayAdded=true
     }
-    searchOverlayAdded = !searchOverlayAdded;
+
+    overlay = !overlay;
 }
 
-let container = document.querySelector(".container")
 
-const closes = document.querySelector('.container');
-closes.addEventListener('click', removeMenu)
+
+container.addEventListener('click', removeMenu)
+
 function removeMenu(){
     const overlay = document.querySelector('.overlay')
+   
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav">
         </div> 
          ` 
+    document.querySelector(".search").innerHTML = `<i class="fas fa-search"></i>
+    <input type = "text" placeholder = "search"></input>`
+
+
         overlay.remove();
+        searchOverlayAdded=false
         return
 };
 
-/*document.querySelector(".search").addEventListener('click', function(){
-    document.querySelector(".demo").innerHTML = 
-    `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
-        <div class = "navRow">
-            <div class = "rowElement">People</div>
-            <div class = "rowElement">Jobs</div>
-            <div class = "rowElement">Content</div>
-            <div class = "rowElement">Companies</div>
-            <div class = "rowElement">Schools</div>
-            <div class = "rowElement">Groups</div>
-        </div>       
-        <div class = "trySearch">
-            <p>Try searching for</p>
-            <div class="job">
-                <div class="searchIcon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="searchElement" style = "font-weight: bold;">coder</div>
-            </div>
-        </div>
-    </div>`;
-  });
 
-  
-function removeMenu(){
-    document.querySelector(".search").removeEventListener('click', function(){
-        document.querySelector(".demo").innerHTML = 
-        `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
-            <div class = "navRow">
-                <div class = "rowElement">People</div>
-                <div class = "rowElement">Jobs</div>
-                <div class = "rowElement">Content</div>
-                <div class = "rowElement">Companies</div>
-                <div class = "rowElement">Schools</div>
-                <div class = "rowElement">Groups</div>
-            </div>       
-            <div class = "trySearch">
-                <p>Try searching for</p>
-                <div class="job">
-                    <div class="searchIcon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="searchElement" style = "font-weight: bold;">coder</div>
-                </div>
-            </div>
-        </div>`;
-      });
-    }
-      
-      removeMenu*/
 
 function renderFeed(data) {
     if (!Array.isArray(data)){
@@ -112,9 +76,11 @@ function renderPost(data){
     console.log('-----------------');
     let HTML = `<div class = "post">
                 ${renderPostHeader(data.author, data.time)}
+                
                 ${renderPostContent(data.content)}
-                ${renderPostFooter()}
+                ${renderPostFooter(data.footer)}
                 </div>`;
+console.log(data.footer)
 
     return HTML;
 }
@@ -129,7 +95,7 @@ function renderPostHeader(author, time){
                             <a href="${author.link}">${author.name} ${author.surname} ${author.connection}</a>
                             <a href="${author.link}"> ${author.position}</a>
                         </div>
-                        <div class="time">${time}</div>
+                        <div class="time">${convertTIme(time)}</div>
                     </div>
                     <i class="fa fa-ellipsis-h"></i>
                 </div>`;
@@ -138,9 +104,10 @@ function renderPostHeader(author, time){
 }
 
 function renderPostContent(content){
+   
     let HTML = `<div class="content">`;
     if (content.text) {
-        HTML += renderPostContentText(content.text);
+        HTML += renderPostContentText(content);
     }
 
     if(content.images){
@@ -151,14 +118,42 @@ function renderPostContent(content){
     return HTML;
 }
 
-function renderPostContentText(text){
-    let HTML = "";
-    HTML = `<p>${text}</p>`;
+function renderPostContentText( content ){
+   
+    const maxTextLength = 225;
+    const smallestTextLength = 30;
+    let HTML = '';
+    let style = '';
+    let text = content.text;
+
+    console.log(text)
+
+    if (text.length <= smallestTextLength) {
+        style += 'big-text';
+    }
+
+    
+    if ( text.length >= maxTextLength ) {
+        text = text.substring( 0, maxTextLength );
+        let skipSymbols = 0;
+        /*for ( let i=maxTextLength-1; i>=0; i-- ) {
+            if ( text[i] === ' ' ) {
+                break;
+            }
+            skipSymbols++;
+        }*/
+        text = text.substring( 0, maxTextLength-skipSymbols-1 );
+        text += ' <span class="more">...read more</span>';
+    }
+
+    HTML = `<p class="${style}" data-fulltext="${content.text}">${text}</p>`;
+
     return HTML;
+
 }
 
 function renderPostContentGallery(images){
-    console.log(images);
+  
     let HTML = "";
     let imgHTML = "";
     let moreHTML = "";
@@ -198,12 +193,13 @@ function renderPostContentGallery(images){
     return HTML;
 }
 
-function renderPostFooter(){
-    return `<div class="footer">
-    <div class="row">
-        <div class="reaction">like</div>
+function renderPostFooter(footer){
+   let HTML = `<div class="footer">
+    <div class="reaction">
+        ${renderFooterReaction(footer)}
     </div>
-    <div class="row">
+
+    <div class="rowAction">
         <div class="action">
             <i class="fa fa-thumbs-up"></i>
             <div class="text">Like</div>
@@ -215,9 +211,10 @@ function renderPostFooter(){
         <div class="action">
             <i class="fas fa-share"></i>
             <div class="text">Share</div>
-         </div>
+        </div>
     </div>
-    <div class="row">
+    
+    <div class="rowComment">
         <img src="./img/user.png">
         <div class="comment-form">
             <textarea></textarea>
@@ -227,11 +224,68 @@ function renderPostFooter(){
         </div>
     </div>
 </div>`;
+
+return HTML
+
 }
 
+function convertTIme(timestamp){
+    const now = Date.now();
+    let seconds = Math.round((now - timestamp) / 1000);
+// 0s-15s - Just now
+if ( seconds < 16 ) {
+    return 'Just now';
+}
+// 16s-59s - [x]s
+if ( seconds < 60 ) {
+    return seconds+'s';
+}
+// 1m-59m - [x]m
+let minutes = Math.round(seconds / 60);
+if ( minutes < 60 ) {
+    return minutes+'min';
+}
+// 24h
+let hours = minutes / 60;
+if ( hours < 24 ) {
+    return hours+'h';
+}
+// 7d
+let days = hours / 24;
+if ( days < 7 ) {
+    return days+'d';
+}
+// 4w
+let weeks = Math.floor(days / 7);
+if ( weeks < 5 ) {
+    return weeks+'w';
+}
+// 12m
+let months = Math.floor(days / 30);
+if ( months < 12 ) {
+    return months+'m';
+}
+// 1y++
+return Math.floor(days / 365)+'y';
+}
+
+function renderFooterReaction(footer){
+   
+    let HTML = ''
+    for(let i = 0; i < footer.length; i++){
+        HTML += footer[i].reaction;
+    }
+
+    console.log(footer)
+    return HTML
+
+}
+
+
+
+
+
 renderFeed(feed);
-
-
 
 function renderViews(datalfp){
     if (!Array.isArray(datalfp)){
@@ -239,10 +293,11 @@ function renderViews(datalfp){
     }
     let HTML = "";
     for (let i = 0; i < datalfp.length; i++){
-        HTML += `<div class = "rowv">
+        HTML += `
+        <a href="#" class = "rowv">
             <div class = "text">${datalfp[i].row}</div>
             <div class = "number">${datalfp[i].number}</div>
-        </div>`
+            </a>`
     }
 
     return document.querySelector('.views').innerHTML = HTML;
@@ -365,19 +420,28 @@ function renderFinalRow(dataFR){
         }
         if(dataFR[i].itemF){
             HTML += `<div class = "row">${dataFR[i].itemF.text} ${dataFR[i].itemF.icon}</div>`
-    
         }
-
     }
-
-        
+ 
         let finalRow = document.querySelector(".thirdRowContent");
         return finalRow.innerHTML = HTML;
-    
 
 }
 
 
 renderFinalRow(finalPart)
 
+const readMores = document.querySelectorAll('.post p >.more');
+
+for (let i=0; i<readMores.length; i++) {
+    const readMore = readMores[i];
+    readMore.addEventListener('click', readMoreClick);
+}
+
+function readMoreClick(event){
+    const p = event.target.closest('p');
+    const fullText = p.dataset.fulltext;
+    return p.innerText = fullText;
+
+}
 

@@ -11,10 +11,26 @@ const feed = [
         img: 'chuck.jpg',
         link: '#'
     },
-    time: 1583832433393,
+
+    time: 15838324311000,
     content: {
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aut dolores soluta impedit, nostrum consequatur nam! Consectetur ipsam quas illo.'
-    }
+    },
+
+    footer: [
+        {
+        reaction:'<img src="./img/like.svg">'
+        },
+        {
+        reaction: '<img src="./img/love.svg">'
+        },
+        {
+        reaction: '<img src="./img/clap.svg">'
+        },
+        {
+        reaction: 100
+        }
+    ]
 },
 
 {
@@ -26,10 +42,26 @@ const feed = [
         img: 'user.png',
         link: '#'
     },
-    time: 1583832433393,
+    time: 1583111100000,
     content: {
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aut dolores soluta impedit, nostrum consequatur nam! Consectetur ipsam quas illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aut dolores soluta impedit, nostrum consequatur nam! Consectetur ipsam quas illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aut dolores soluta impedit, nostrum consequatur nam! Consectetur ipsam quas illo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit aut dolores soluta impedit, nostrum consequatur nam! Consectetur ipsam quas illo.'
-    }
+    },
+
+    footer: [
+        {
+        reaction:'<img src="./img/like.svg">'
+        },
+        {
+        reaction: '<img src="./img/love.svg">'
+        },
+        {
+        reaction: '<img src="./img/clap.svg">'
+        },
+        {
+        reaction: 100
+        }
+    ]
+
 },
 
 {
@@ -47,7 +79,19 @@ const feed = [
         images: [
             'pic1.jpg'
         ]
-    }
+    },
+
+    footer: [
+        {
+        reaction:'<img src="./img/like.svg">'
+        },
+        {
+        reaction: '<img src="./img/clap.svg">'
+        },
+        {
+        reaction: 70
+        }
+    ]
 },
 
 {
@@ -66,7 +110,23 @@ const feed = [
             'pic1.jpg',
             'pic2.jpg'
         ]
-    }
+    },
+
+
+    footer: [
+        {
+        reaction:'<img src="./img/like.svg">'
+        },
+        {
+        reaction: '<img src="./img/love.svg">'
+        },
+        {
+        reaction: '<img src="./img/clap.svg">'
+        },
+        {
+        reaction: 500
+        }
+    ]
 },
 
 {
@@ -78,7 +138,7 @@ const feed = [
         img: 'user.png',
         link: '#'
     },
-    time: 1583832433393,
+    time: 1581112433393,
     content: {
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         images: [
@@ -86,10 +146,25 @@ const feed = [
             'pic2.jpg',
             'pic3.jpg'
         ]
-    }
+    },
+
+    footer: [
+        {
+        reaction:'<img src="./img/like.svg">'
+        },
+        {
+        reaction: '<img src="./img/love.svg">'
+        },
+        {
+        reaction: 30
+        }
+    ]
 },
 
 ]
+
+
+
 const views = [
         {
             row: "Who viewed your profile",
@@ -228,7 +303,7 @@ const addToYourFeed = [
     }
 ]
 
-console.log(addToYourFeed)
+
 
 const finalPart = [
     {

@@ -1,0 +1,239 @@
+.containerLeft{
+    display: inline-block;
+    width: 215px;
+    margin-top: 100px;
+    margin-left: calc(((100% - 1200px) / 2) + 12px);
+    margin-right: 20px;
+    height: 724px;
+}
+
+    .leftPart {
+        display: inline-block;
+        height: 410px;
+        border: 1px #a3a8aa solid;
+        box-shadow: 0px 2px 10px -4px #888;
+        border-radius: 3px;
+        background-color: white;
+    }
+
+        .leftPart > .image{
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            background-image: url("../img/background.svg");
+            position: relative;
+            }
+
+            .leftPart > .image > img{
+                height: 65px;
+                width: 65px;
+                border-radius: 50%;
+                position: absolute;
+                left: calc((100% - 65px) / 2);
+                bottom: -70%;
+                border: 2px whitesmoke solid;
+                object-fit: cover;
+                object-position: top;   
+                }
+        
+        .leftPart > .userProfile{
+            display: inline-block;
+            width: 100%;
+            padding-top: 70px;
+            text-align: center;
+            border-bottom: 1px #a3a8aa solid;
+        }
+
+            .leftPart > .userProfile :first-child{
+                font-size: 18px;
+            }
+
+            .leftPart > .userProfile :nth-child(2){
+                font-size: 14px;
+                color: rgb(143, 133, 133);
+                padding-top: 5px;
+                padding-bottom: 20px;
+            }
+    
+        .leftPart > .profileSecondRow {
+            width: 100%;
+            display: inline-block;
+            padding-top: 20px;
+        }
+
+                .leftPart > .profileSecondRow > .views >.rowv {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 10px;
+                    padding-left: 10px;
+                    margin-right: 10px;
+                    color: #696c6f;
+                    font-size: 14px;
+                    text-decoration: none;
+                }
+
+                .profileSecondRow > .views > .rowv:hover,
+                .profileSecondRow > .views > .rowv:hover > .number,
+                .profileSecondRow > .views > .rowv:hover > .text
+                
+                {
+                    text-decoration: underline; 
+                }       
+                    .views > .rowv > .number{
+                        color: #0073b1; 
+                }
+
+
+                .leftPart > .profileSecondRow > a{
+                    text-decoration: none;
+                }
+
+            .leftPart > .profileSecondRow > a > p {
+                color: rgb(143, 133, 133);
+                padding-left: 10px;
+                font-size: 14px;
+                padding-top: 10px;
+            }
+
+            .leftPart > .profileSecondRow .try {
+                display: flex;
+                color: black;
+                width: 100%;
+                border-bottom: 1px #a3a8aa solid;
+            }
+
+            .try > span{
+                    display: inline-block;
+                    float: left;
+                    margin-top: 5px;
+                    margin-left: 10px;
+                    height: 10px;
+                    width: 10px;
+                    background-image: url("../img/square-gold.jpg");
+                    background-size: cover;
+                    background-repeat: no-repeat; 
+                }
+
+            .profileSecondRow .try > p{
+                display: inline-block;
+                float: left;
+                font-size: 14px;
+                margin-right: 20px;
+                margin-left: 10px;
+                margin-bottom: 20px;
+            }
+
+            .leftPart > .profileSecondRow > :hover
+            {
+                text-decoration: underline;
+               
+            }
+
+            .leftPart > .profileSecondRow .try:hover
+            {
+                text-decoration: underline;
+                color:purple;
+            }
+
+
+        .leftPart > .profileSecondRow .savedItems {
+            width: 100%;
+            height: 50px;
+            display: inline-block;
+            float: left;
+            padding: 15px;
+        }
+
+            .profileSecondRow a > i{
+                display: inline-block;
+                float: left;
+                vertical-align: middle;
+                height: 10px;
+                width: 10px;
+                margin: 5px;    
+        }
+
+            .profileSecondRow .textSaved{
+                height: 100%;
+                color: black;
+                vertical-align: middle;
+                padding-left: 10px;
+                display: inline-block;
+                margin-bottom: 25px;
+                float: left;
+            }
+
+    .leftPartSecond {
+        height: 254px;
+        display: inline-block;
+        width: 100%;
+        float: left;
+        margin-top: 10px;
+        border: 1px #a3a8aa solid;
+        box-shadow: 0px 2px 10px -4px #888;
+        border-radius: 3px;
+        background-color: white;
+    }
+
+        .leftPartSecond > .profileThirdRow{
+            display: inline-block;
+            float: left;
+            margin-left: 10px;
+        }
+
+            .leftPartSecond > .profileThirdRow >.groups,
+            .leftPartSecond > .profileThirdRow >.followedHashtags
+            {
+                display: inline-block;
+                float: left;
+                margin-top: 10px;
+            }
+
+
+            .leftPartSecond > .profileThirdRow .row{
+                display: flex;
+                font-size: 14px;
+                color: #696c6f;
+                line-height: 18px;
+            }
+
+                .profileThirdRow .row > .icon {
+                    height: 25px;
+                    width: 25px;
+                }
+
+                .profileThirdRow a{
+                    color: #0073b1;
+                    padding-bottom: 5px;
+                    text-decoration: none;
+                }
+
+                .profileThirdRow .headerlf:hover{
+                    text-decoration: underline;
+                    
+                }
+
+                .profileThirdRow > .events >.headerlf{
+                    color:black;
+                    padding-bottom: 5px;
+                    padding-top: 10px;
+                }
+
+            .discover{
+                display: inline-block;
+                color: black;
+                text-decoration: none;
+                height: 50px;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                padding: 15px;
+                border-left: 1px #a3a8aa solid;
+                border-right: 1px #a3a8aa solid;
+                border-bottom: 1px #a3a8aa solid;
+            }
+
+            .discover :hover{
+                color: #0073b1;
+                text-decoration: underline;
+            }

@@ -6,372 +6,6 @@
     background-color: #f5f5f5; 
 }
 
-.overlay {
-    display: inline-block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background-color: #0004;
-}
-
-header {
-    display: inline-block;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background-color: #283e4a;
-    color: #fff;
-    z-index: 3;
-}
-    .navBar{
-        width: 1200px;
-        height: 34px;
-        display: flex;
-        align-content: space-between;
-        margin-top: calc((50px - 34px) / 2);
-        margin-left: calc((100% - 1200px) / 2);
-        position: relative;
-    }
-
-        .searchNav{
-             display: inline-block;
-             font-size: 14px;
-        }
-
-        .searchNavHeader{
-            display: inline-block;
-            font-size: 14px;
-            padding-left: 100px;
-       }
-
-            .navIcon {
-                display: inline-block;
-                text-align: center;
-                padding-left: 30px;
-            }
-                .navIcon p{
-                    font-size: 14px;
-                }
-
-                .navBar i {
-                    color: white;
-                    font-size: 20px;
-                    text-align: center;
-                    height: 25px;
-                }
-
-
-            .user {
-                display: inline-block;
-                text-align: center;
-                padding-right: 30px;
-                border-right: 1px solid whitesmoke;
-                padding-left: 30px;
-            }
-
-            .navIcon:nth-child(6) .i img{
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                border: 2px whitesmoke solid;
-                }
-
-        .navBar input{
-            text-transform: capitalize;
-        }
-
-        .navRow {
-            display: flex; 
-            width: 100%;
-            height: 30%;
-            color: #3f474b;
-            padding-bottom: 10px;
-            margin-top: 10px;
-            margin-right: 200px;
-            border-bottom: 1px solid #c6cdcf;
-        }
-
-        .trySearch {
-            display: inline-block;
-            color: black;
-            padding-left: 10px;
-            padding-top: 20px;
-        }
-
-        .job {
-            display: flex;
-            padding-top: 20px;
-        }
-
-        .searchIcon {
-            display: inline-block;
-            height: 40px;
-            width: 40px;
-            color: #3f474b;
-        }
-            i{
-                display: inline-block;
-                height: 40px;
-                width: 40px;
-                color: #3f474b;
-            }
-
-
-            .rowElement{
-                border: 1px #3f474b solid;
-                padding: 2px 20px;
-                border-radius: 50px;
-                margin: 5px;
-                font-size: 18px;   
-            }
-
-        header img {
-            height: 34px;
-            width: 60px;
-        }
-
-        header .search {
-            height: 100%;
-            width: 200px;
-        }
-
-        header input {
-            height: 100%;
-            width: 100%;
-        }
-
-/*leftPart*/
-        .containerLeft{
-            display: inline-block;
-            width: 215px;
-            margin-top: 100px;
-            margin-left: calc(((100% - 1200px) / 2) + 12px);
-            margin-right: 20px;
-            border: 1px #a3a8aa solid;
-            box-shadow: 0px 2px 10px -4px #888;
-            border-radius: 3px;
-            height: 400px;
-            background-color: white;
-        }
-
-        .leftPart > .image{
-            width: 100%;
-            height: 50px;
-            background-image: url("../img/background.svg");
-            position: relative;
-            }
-
-            .leftPart > .image > img{
-                height: 65px;
-                width: 65px;
-                border-radius: 50%;
-                position: absolute;
-                left: calc((100% - 65px) / 2);
-                bottom: -70%;
-                border: 2px whitesmoke solid
-                }
-                
-        .leftPart > .userProfile{
-            display: inline-block;
-            width: 100%;
-            padding-top: 70px;
-            text-align: center;
-            background-color: white;
-            border-bottom: 1px #a3a8aa solid;
-        }
-
-            .leftPart > .userProfile :first-child{
-                font-size: 18px;
-            }
-
-            .leftPart > .userProfile :nth-child(2){
-                font-size: 14px;
-                color: rgb(143, 133, 133);
-                padding-top: 5px;
-                padding-bottom: 20px;
-            }
-            
-            .leftPart > .profileSecondRow {
-                width: 100%;
-                display: inline-block;
-                padding-top: 20px;
-            }
-
-                .leftPart > .profileSecondRow > .views {
-                    
-                }
-
-                    .leftPart > .profileSecondRow > .views >.rowv {
-                        display: flex;
-                        justify-content: space-between;
-                        padding-bottom: 10px;
-                        padding-left: 10px;
-                        margin-right: 10px;
-                        color: #696c6f;
-                        font-size: 14px;
-                    }
-
-                     .profileSecondRow > .views > .rowv:hover,
-                     .profileSecondRow > .views > .rowv:hover > .number,
-                     .profileSecondRow > .views > .rowv:hover > .text
-                     
-                     {
-                        text-decoration: underline;
-                        cursor: pointer;
-                    }       
-                    
-                         .views > .rowv > .number{
-                            color: #0073b1; 
-                    }
-        
-                .leftPart > .profileSecondRow > p {
-                    color: rgb(143, 133, 133);
-                    padding-left: 10px;
-                    font-size: 14px;
-                    padding-top: 10px;
-                }
-
-                .leftPart > .profileSecondRow > .try {
-                    display: flex;
-                    padding-left: 10px;
-                    width: 100%;
-                    border-bottom: 1px #a3a8aa solid;
-                }
-
-                    span{
-                        display: inline-block;
-                        margin-top: 5px;
-                        margin-right: 10px;
-                        height: 10px;
-                        width: 10px;
-                        background-image: url("../img/square-gold.jpg");
-                        background-size: cover;
-                        background-repeat: no-repeat; 
-                    }
-
-                    .profileSecondRow > .try > p{
-                        font-size: 14px;
-                        margin-right: 20px;
-                        margin-bottom: 20px;
-                    }
-
-                    .leftPart > .profileSecondRow > :hover
-                    {
-                        text-decoration: underline;
-                        cursor: pointer;
-                    }
-
-                    .leftPart > .profileSecondRow > :hover ~ .try
-
-                    {
-                        text-decoration: underline;
-                        color:purple;
-                        cursor: pointer;
-                    }
-
-
-                .leftPart > .profileSecondRow > .savedItems {
-                    display: flex;
-                    padding: 15px;
-                    margin-bottom: 20px;
-                }
-
-                    .profileSecondRow > .savedItems > i{
-                        height: 10px;
-                        width: 10px;
-                        margin: 5px;
-                        
-
-                }
-                    .profileSecondRow > .savedItems > p{
-
-                    }
-
-        .leftPartSecond {
-            display: inline-block;
-            width: 100%;
-            float: left;
-            margin-top: 10px;
-            border: 1px #a3a8aa solid;
-            box-shadow: 0px 2px 10px -4px #888;
-            border-radius: 3px;
-            background-color: white;
-        }
-
-            .leftPartSecond > .profileThirdRow{
-                display: inline-block;
-                float: left;
-                margin-left: 10px;
-            
-            }
-
-                .leftPartSecond > .profileThirdRow .row{
-                    display: flex;
-                    font-size: 14px;
-                    color: #696c6f;
-                    line-height: 18px;
-                }
-
-                    .profileThirdRow .row > .icon {
-                        height: 25px;
-                        width: 25px;
-                    }
-
-
-                    .profileThirdRow .headerlf{
-                        color: #0073b1;
-                        padding-bottom: 5px;
-                        padding-top: 10px;
-                    }
-
-                    .profileThirdRow .headerlf:hover{
-                        text-decoration: underline;
-                        cursor: pointer;
-                    }
-
-                    .profileThirdRow > .events >.headerlf{
-                        color:black;
-                        padding-bottom: 5px;
-                        padding-top: 10px;
-                    }
-
-                    .profileThirdRow > .events >.headerlf:hover{
-                        text-decoration: none;
-                        cursor: none;
-                    }
-
-
-        
-                .discover{
-                    display: inline-block;
-                    background-color: white;
-                    width: 100%;
-                    text-align: center;
-                    padding: 15px;
-                    border-left: 1px #a3a8aa solid;
-                    border-right: 1px #a3a8aa solid;
-                    border-bottom: 1px #a3a8aa solid;
-                }
-            
-
-/*headerRow*/
-
-        .contentBig {
-            display: inline-block;
-            margin-top: 50px;
-            width: 312px;
-            float: left;
-            background-color: #fff;
-        }
-
 /*start a post*/
     .startPost {
         display: inline-block;
@@ -383,8 +17,6 @@ header {
         color: #696c6f;
         font-size: 18px;
         margin-bottom: 20px;
-       
-
     }
 
         .startPostfirst {
@@ -403,12 +35,19 @@ header {
                 padding-top: 20px;
                 display: flex;
                 width: 60%;
+                text-decoration: none;
             }
 
-                .firstColumn > i{
+                .firstColumn > p{
+                    color: #696c6f;
+                    text-decoration: none;
                 }
 
-                .firstColumn > p{
+                .firstColumn:hover i,
+                .firstColumn:hover p
+                {
+                    color: #0073b1;
+                    text-decoration: underline;
                 }
 
             .startPostIcons {
@@ -421,14 +60,18 @@ header {
 
             }
 
-                .startPostIcons > .Icon{
-                height: 58px;
+                .startPostIcons .Icon{
+                height: 100%;
                 width: calc(100% / 3);
                 text-align: center;
                 }
 
+                .startPostIcons .Icon:hover{
+                  background-color: #f3f6f8;
+                }
+
                 .startPostIcons > .Icon:nth-child(2){
-                    height: 58px;
+                    height: 100%;
                     border-left: 1px #a3a8aa solid;
                     border-right: 1px #a3a8aa solid;
                     } 
@@ -443,191 +86,23 @@ header {
             background-color: #f3f6f8;
         }
 
-            .article > p:first-child{
-                color: #0073b1;     
+            .article > a{
+                color: #0073b1;
+                text-decoration: none;   
             }
 
-            .article > p:nth-child(2){
+            .article > a:hover{
+                text-decoration: underline;   
+            }
+
+            .article > p{
                 padding-left: 5px;   
             }
 
-/*feed*/
-    .contentBig {
-        width: 552px;
-        margin-top: 100px;
-        background-color: #f5f5f5;
-    }
-        
-        .contentBig > .feed {
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            float: left;
-            overflow: auto;
-        }
 
-            .post{
-                display: inline-block;
-                border: 1px #a3a8aa solid;
-                box-shadow: 0px 2px 10px -4px #888;
-                border-radius: 3px;
-                color: #696c6f;
-                width: 100%;
-                background-color: white;
-                margin-bottom: 20px;
-
-            }
-
-                .post > .header{
-                    display: flex;
-                    position: relative;
-                    padding: 10px;
-                }
-
-                    .post > .header > img{
-                        height: 40px;
-                        width: 40px;
-                        border-radius: 50%;
-
-                    }
-
-                    .post > .header > .texts{
-                        padding-left: 10px;
-
-                    }
-
-                        .header > .texts > .title{
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                             .texts > .title > a:first-child{
-                                font-weight: 400;
-                                font-size: 16px;
-                                color: rgba(0,0,0,.9);
-                                text-decoration: none;
-                            }
-
-                            .texts > .title > a:nth-child(2){
-                                font-size: 14px;
-                                color: rgba(143, 137, 137, 0.9);
-                                text-decoration: none;
-                            }
-
-                            .header > .texts > .time{
-                                display: flex;
-                                flex-direction: column;
-                                font-size: 14px;
-                                color: rgba(143, 137, 137, 0.9);
-                                text-decoration: none;
-                            }
-
-                    .post > .header > i{
-                        position: absolute;
-                        right: 10px;
-                        top: 10px;
-                        height: 40px;
-                        width: 40px;
-                        text-align: center;
-                        cursor: pointer;
-                        padding-top: 10px;
-                        
-                    }
-
-                    .post > .header > i:hover {
-                        background-color: whitesmoke;
-                        border-radius: 50%;
-                    }
-
-
-                .post > .content {
-                    display: inline-block;
-                    padding: 10px;
-
-                }
-
-                    .post > .content > p{
-            
-                        font-weight: 400;
-                        color: rgba(0,0,0,.9);
-
-                    }
-
-
-                .post > .footer{
-
-                }
-            
-                    .footer > .row{
-                        display: flex;
-                    }
-
-                    .footer > .row:first-child{
-                        border-bottom: 1px whitesmoke solid;
-                    } 
-                    
-                        .footer > .row > .action{
-                            display: flex;
-                            padding: 10px;
-
-                        } 
-                            .row > .action > i{
-                                height: 20px;
-                                width: 20px;
-                            } 
-
-                            .row > .action > .texts{
-
-                            } 
-
-                            .footer > .row > img{
-                                display: inline-block;
-                                width: 36px;
-                                height: 36px;
-                                object-fit: cover;
-                                object-position: center;
-                                float: left;
-                                margin-left: 10px;
-                                margin-right: 10px;
-
-                            } 
-
-                            .footer > .row > .comment-form{
-                                display: inline-block;
-                                width: calc(100% - 66px);
-                                float: right;
-                                position: relative;
-                                margin-bottom: 10px;;
-                            } 
-
-                                .footer .comment-form > textarea{
-                                    display: inline-block;
-                                    width: 100%;
-                                    height: 36px;
-                                    min-height: 36px;
-                                    max-height: 150px;
-                                    border-radius: 18px;
-                                    font-size: 20px;
-                                    line-height: 25px;
-                                    padding: 5px 10px;
-                                    resize: vertical;
-                                } 
-
-                                .post .comment-form > .interactions{
-                                    display: inline-block;
-                                    position: absolute;
-                                    right: 10px;
-                                    top: 10px;
-                                } 
-                                    .post .interactions > .fa {
-                                        display: inline-block;
-                                        float: left;
-                                        padding: 0 5px;
-                                        line-height: 17px;
-                                        font-size: 17px;
-                                    }
-
+    /*right part*/
     .containerRightPart {
+
         width: 312px;
         display: inline-block;
         margin-top: 100px;
@@ -732,7 +207,7 @@ header {
                         border: 1px solid #0073b1;
                         padding-right: 5px;
                         margin-right: 5px;
-                        vertical-align: middle;
+                        vertical-align: text-bottom;
                         margin-top: 5px;
                     }
 
@@ -750,6 +225,7 @@ header {
                             color:  #0073b1;
                             padding-left: 5px;
                             padding-right: 5px;
+                            vertical-align: middle;
                         }
 
                         .headerFirstRowContent > .follow > .text{
@@ -758,6 +234,7 @@ header {
                             font-weight: 400px;
                             font-size: 18px;
                             color:  #0073b1;
+                            vertical-align: middle;
 
                         }
 
