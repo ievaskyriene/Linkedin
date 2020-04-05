@@ -95,7 +95,7 @@ function renderPostHeader(author, time){
                             <a href="${author.link}">${author.name} ${author.surname} ${author.connection}</a>
                             <a href="${author.link}"> ${author.position}</a>
                         </div>
-                        <div class="time">${time}</div>
+                        <div class="time">${convertTIme(time)}</div>
                     </div>
                     <i class="fa fa-ellipsis-h"></i>
                 </div>`;
@@ -229,6 +229,46 @@ return HTML
 
 }
 
+function convertTIme(timestamp){
+    const now = Date.now();
+    let seconds = Math.round((now - timestamp) / 1000);
+// 0s-15s - Just now
+if ( seconds < 16 ) {
+    return 'Just now';
+}
+// 16s-59s - [x]s
+if ( seconds < 60 ) {
+    return seconds+'s';
+}
+// 1m-59m - [x]m
+let minutes = Math.round(seconds / 60);
+if ( minutes < 60 ) {
+    return minutes+'min';
+}
+// 24h
+let hours = minutes / 60;
+if ( hours < 24 ) {
+    return hours+'h';
+}
+// 7d
+let days = hours / 24;
+if ( days < 7 ) {
+    return days+'d';
+}
+// 4w
+let weeks = Math.floor(days / 7);
+if ( weeks < 5 ) {
+    return weeks+'w';
+}
+// 12m
+let months = Math.floor(days / 30);
+if ( months < 12 ) {
+    return months+'m';
+}
+// 1y++
+return Math.floor(days / 365)+'y';
+}
+
 function renderFooterReaction(footer){
    
     let HTML = ''
@@ -240,6 +280,10 @@ function renderFooterReaction(footer){
     return HTML
 
 }
+
+
+
+
 
 renderFeed(feed);
 
