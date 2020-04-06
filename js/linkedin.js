@@ -3,16 +3,13 @@
 console.log("veikia")
 
 const search = document.querySelector(".search");
-
 search.addEventListener("click", openMenu);
 let container = document.querySelector(".container")
-
 let searchOverlayAdded=false;
-
 
 function openMenu(){
     document.querySelector(".demo").innerHTML = 
-    `<div class="searchNav" style = "background-color: white; position: absolute; left: 60px; top: 40px">
+    `<div class="searchNav">
         <div class = "navRow">
             <div class = "rowElement">People</div>
             <div class = "rowElement">Jobs</div>
@@ -22,10 +19,8 @@ function openMenu(){
             <div class = "rowElement">Groups</div>
         </div>  ` 
 
-      
 document.querySelector(".search").innerHTML = `<input type = "text" placeholder = "search" style = "background-color: white; padding-left:10px;">
 <i class="fas fa-search" style = "color: #0073b1; width: 40px; font-size: 16px; padding-top: 10px;"></i></input>`
-
 
 let overlay = document.querySelector('.overlay')
 
@@ -33,31 +28,42 @@ let overlay = document.querySelector('.overlay')
         container.insertAdjacentHTML("afterbegin", "<div class='overlay'></div>")
         searchOverlayAdded=true
     }
-
     overlay = !overlay;
 }
 
-
-
 container.addEventListener('click', removeMenu)
-
 function removeMenu(){
     const overlay = document.querySelector('.overlay')
-   
     document.querySelector(".demo").innerHTML = 
     `<div class="searchNav">
         </div> 
          ` 
     document.querySelector(".search").innerHTML = `<i class="fas fa-search"></i>
     <input type = "text" placeholder = "search"></input>`
-
-
         overlay.remove();
         searchOverlayAdded=false
         return
 };
 
+function renderHeaderMenu(dataHMenu){
+    if (!Array.isArray(dataHMenu)){
+        return console.error("Reikia Array");
+    }
+    let HTML = "";
+    for (let i = 0; i < dataHMenu.length; i++){
+        HTML += `<a href="#" class = "navIcon" tabindex="1">
+            <div class = "i">${dataHMenu[i].i}</div>
+            <div class = "p">${dataHMenu[i].p}</div>
+        </a>`
+    }
 
+    let headerMenu = document.querySelector('.searchNavHeader');
+    return  headerMenu.innerHTML = HTML;
+}
+
+renderHeaderMenu(headerMenu)
+
+/*render FEED*/
 
 function renderFeed(data) {
     if (!Array.isArray(data)){
@@ -361,23 +367,9 @@ leftHeader += `<div class="hdr ${color}">Followed Hashtags</div>`;
 
 console.log(leftHeader)*/
 
-function renderHeaderMenu(dataHMenu){
-    if (!Array.isArray(dataHMenu)){
-        return console.error("Reikia Array");
-    }
-    let HTML = "";
-    for (let i = 0; i < dataHMenu.length; i++){
-        HTML += `<div class = "navIcon">
-            <div class = "i">${dataHMenu[i].i}</div>
-            <div class = "p">${dataHMenu[i].p}</div>
-        </div>`
-    }
-    let headerMenu = document.querySelector('.searchNavHeader');
 
-    return  headerMenu.innerHTML = HTML;
-}
 
-renderHeaderMenu(headerMenu)
+
 
 
 function renderAddToFeed(addToFeed){

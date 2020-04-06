@@ -260,14 +260,7 @@ const headerMenu = [
         i: '<i class="far fa-bell"></i>',
         p: 'Notifications'
     },
-    {
-        i: '<img src="./img/chuck.jpg" alt="User photo">',
-        p: 'Me'
-    },
-    {
-        i: ' <i class="fas fa-th-large"></i>',
-        p: 'Work'
-    }
+
 ]
 
 const addToYourFeed = [
