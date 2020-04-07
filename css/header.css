@@ -60,14 +60,13 @@ header {
                 color: white; 
             }
 
-         
             .navIcon :hover,
             .navIcon:hover .p,
             .navIcon:hover i{
                 color: white;
             }
 
-                .navIcon > .p{
+                .navBar .p{
                     font-size: 14px;
                     color: rgb(207, 202, 202);  
                 }
@@ -79,20 +78,33 @@ header {
                     color: rgb(207, 202, 202);
                 }
 
-            .user {
+            .navIcon img{
                 display: inline-block;
                 text-align: center;
-                padding-right: 30px;
-                border-right: 1px solid whitesmoke;
-                padding-left: 30px;
-            }
-
-            .navIcon:nth-child(6) .i img{
                 width: 25px;
                 height: 25px;
                 border-radius: 50%;
                 border: 2px whitesmoke solid;
                 }
+
+        .searchNavHeaderSecond > .navIcon > .text{
+            display: flex;
+            text-align: center;
+            font-size: 14px;
+            color: rgb(207, 202, 202);  
+        }
+
+        .navIcon > .text > i{
+            width: 20px;
+        }
+
+        .searchNavHeaderSecond > .navIcon > p{
+           
+            
+            width: 50%;
+        }
+
+
 
         .navBar input{
             text-transform: capitalize;
